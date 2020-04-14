@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.blocks-container{
+  display:table;
+  width: 100%;
+  margin: 0 auto;
+}
+.block{
+  display: table;
+  padding: 2em;
+  margin: auto;
+  border-style: hidden;
+  border-radius:1em;
+  background: rgb(2,130,255);
+  background: linear-gradient(0deg, rgba(2,130,255,1) 0%, rgba(0,113,172,1) 38%, rgba(0,212,255,1) 100%);
+}
+.weather-logo{
+    display: table-cell;
+    font-size: 5em;
+}
+.summary-title{
+    display: table-cell;
+    font-size: 2em;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.weather-temp{
+    margin-left: 0.5em;
+    font-size: 5em;
+    display: table-cell;
+}
+.weather-pressure{
+    display: table-cell;
+}
+.row{
+    display: table-row;
+  }
+.weather-pm{
+    display: table-cell;
+}
+.timestamp{
+    display: table-cell;
+    font-style: italic;
+    color: #383838;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}

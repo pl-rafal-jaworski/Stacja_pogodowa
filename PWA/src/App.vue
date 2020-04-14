@@ -34,16 +34,12 @@ export default {
   data: () => ({
     links: [
       {
-        name: 'Home',
+        name: 'Aktualnie',
         to: '/'
       },
       {
-        name: 'Page 1',
+        name: 'Dane historyczne',
         to: '/page-1'
-      },
-      {
-        name: 'Bad Link',
-        to: '/random-bad-url'
       }
     ]
   })

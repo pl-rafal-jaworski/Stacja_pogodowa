@@ -4,6 +4,8 @@ const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const sqlite3 = require('sqlite3').verbose();
 
 module.exports = (env, argv) => ({
   mode: argv && argv.mode || 'development',
@@ -64,7 +66,20 @@ module.exports = (env, argv) => ({
       from: path.resolve(__dirname, 'static'),
       to: path.resolve(__dirname, 'dist'),
       toType: 'dir'
-    }])
+    }]),
+    new SWPrecacheWebpackPlugin({
+  cacheId: 'stacja_pogodowa',
+  filename: 'service-worker-cache.js',
+  staticFileGlobs: ['dist/**/*.{js,css}', '/'],
+  minify: true,
+  stripPrefix: 'dist/',
+  dontCacheBustUrlsMatching: /\.\w{6}\./
+}),
+new CopyWebpackPlugin([{
+  from: path.resolve(__dirname, 'static'),
+  to: path.resolve(__dirname, 'dist'),
+  toType: 'dir'
+}])
   ],
 
   optimization: {
@@ -96,7 +111,8 @@ module.exports = (env, argv) => ({
   devServer: {
     compress: true,
     host: 'localhost',
-    https: true,
+    host: '192.168.1.113',
+    https: false,
     open: true,
     overlay: true,
     port: 9000
