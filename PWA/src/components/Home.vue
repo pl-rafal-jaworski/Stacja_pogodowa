@@ -10,7 +10,7 @@
             🌞
           </div>
           <div class="weather-temp">
-            20
+            20°C
           </div>
         </div>
         <div class="row">
@@ -18,9 +18,17 @@
             Słonecznie
           </div>
         </div>
+        <div class="row-headline">
+          <div class="weather-pressure-headline">
+            Ćiśnienie
+          </div>
+          <div class="weather-pm-headline">
+            Stężenie PM2.5
+          </div>
+        </div>
         <div class="row">
           <div class="weather-pressure">
-            1010
+            1010hPa
           </div>
           <div class="weather-pm">
             0.25
@@ -30,7 +38,7 @@
 
         <div class="row">
             <div class="timestamp">
-              timestamp
+              20s temu
             </div>
         </div>
       </div>

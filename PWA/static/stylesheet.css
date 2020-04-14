@@ -40,6 +40,17 @@ body {
 .weather-pm{
     display: table-cell;
 }
+.row-headline {
+  display: table-row;
+}
+
+.weather-pressure-headline {
+  display: table-cell;
+}
+
+.weather-pm-headline {
+  display: table-cell;
+}
 .timestamp{
     display: table-cell;
     font-style: italic;
@@ -67,7 +78,15 @@ body {
     width: -webkit-fill-available;
     margin: 1em;
     background: whitesmoke;
+  }
+   .summary-title{
+    border-bottom: 30px solid transparent;
+  }
+  .weather-temp{
+      font-size: 3.5em;
 
   }
+
+
 
 }
