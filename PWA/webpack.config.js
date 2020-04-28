@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
-const sqlite3 = require('sqlite3').verbose();
+const axios = require('axios').default;
 
 module.exports = (env, argv) => ({
   mode: argv && argv.mode || 'development',
@@ -111,7 +111,8 @@ new CopyWebpackPlugin([{
   devServer: {
     compress: true,
     host: 'localhost',
-    host: '192.168.1.113',
+    //host: '172.20.10.2',
+    host: '192.168.1.106',
     https: false,
     open: true,
     overlay: true,

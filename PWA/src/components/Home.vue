@@ -4,13 +4,12 @@
 
     <div class="blocks-container">
       <div class="block">
-
         <div class="row">
           <div class="weather-logo">
             🌞
           </div>
           <div class="weather-temp">
-            20°C
+            <tempAktualna></tempAktualna>
           </div>
         </div>
         <div class="row">
@@ -28,17 +27,17 @@
         </div>
         <div class="row">
           <div class="weather-pressure">
-            1010hPa
+            <cisnienieAktualne></cisnienieAktualne>
           </div>
           <div class="weather-pm">
-            0.25
+            <pmAktualne></pmAktualne>
           </div>
         </div>
 
-
         <div class="row">
             <div class="timestamp">
-              20s temu
+              <timestampLast></timestampLast>
+            </div>
             </div>
         </div>
       </div>
@@ -47,5 +46,6 @@
 
 
 </template>
+
 <script>
 </script>

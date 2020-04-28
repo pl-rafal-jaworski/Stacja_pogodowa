@@ -1,3 +1,15 @@
+let sql = `SELECT DISTINCT Name name FROM playlists
+           ORDER BY name`;
+
+db.all(sql, [], (err, rows) => {
+  if (err) {
+    throw err;
+  }
+  rows.forEach((row) => {
+    console.log(row.name);
+  });
+});
+
 <template>
   <div>
     <h1 class="headline">Dane historyczne</h1>

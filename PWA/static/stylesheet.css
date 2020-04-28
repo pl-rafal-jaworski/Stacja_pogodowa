@@ -71,6 +71,7 @@ body {
   body{
     background: rgb(2,130,255);
     background: linear-gradient(0deg, rgba(2,130,255,1) 0%, rgba(0,113,172,1) 38%, rgba(0,212,255,1) 100%);
+    background-attachment:fixed;
     margin:unset;
     width:100%;
   }
