@@ -11,10 +11,11 @@ System stacji pogodowej oparty o czujniki temperatury, wilgotności, ciśnienia 
 
 ## Wykorzystane technologie:
 - npm
-- framework Vue.js
+- framework Vue.js z pluginem Axios
 - webpack
 - [PWA (Progressive Web App)](https://web.dev/what-are-pwas/)
 - SQLite3
+- Flask (REST API)
 
 ## Wykorzystane czujniki oraz komponenty
 - Raspberry Pi
@@ -32,3 +33,6 @@ _W przypadku Linuxa:_
 Uruchamianie branch'a testowego:
 
     >PWA/npm run dev
+    
+## Uruchamianie sererwa REST
+    >REST/python3 server.py
