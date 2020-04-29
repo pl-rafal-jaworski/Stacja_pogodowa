@@ -5,16 +5,14 @@
     <div class="blocks-container">
       <div class="block">
         <div class="row">
-          <div class="weather-logo">
-            🌞
-          </div>
+            <tempEmojiAktualnie></tempEmojiAktualnie>
           <div class="weather-temp">
             <tempAktualna></tempAktualna>
           </div>
         </div>
         <div class="row">
           <div class="summary-title">
-            Słonecznie
+            <tempDescAktualnie></tempDescAktualnie>
           </div>
         </div>
         <div class="row-headline">

@@ -111,8 +111,8 @@ new CopyWebpackPlugin([{
   devServer: {
     compress: true,
     host: 'localhost',
-    //host: '172.20.10.2',
-    host: '192.168.1.106',
+    host: '172.20.10.2',
+    //host: '192.168.1.106',
     https: false,
     open: true,
     overlay: true,
