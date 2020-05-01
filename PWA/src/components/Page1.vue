@@ -1,33 +1,21 @@
-let sql = `SELECT DISTINCT Name name FROM playlists
-           ORDER BY name`;
-
-db.all(sql, [], (err, rows) => {
-  if (err) {
-    throw err;
-  }
-  rows.forEach((row) => {
-    console.log(row.name);
-  });
-});
-
 <template>
   <div>
     <h1 class="headline">Dane historyczne</h1>
 
-    <div class="blocks-container">
-      <div class="block">
+    <div class="blocks-container" v-for="i in pastInfo">
+      <div class="block" >
 
         <div class="row">
           <div class="weather-logo">
-            🌞
+            {{i.emoji}}
           </div>
           <div class="weather-temp">
-            20°C
+            {{i.temp}}°C
           </div>
         </div>
         <div class="row">
           <div class="summary-title">
-            Słonecznie
+            {{i.description}}
           </div>
         </div>
         <div class="row-headline">
@@ -40,96 +28,17 @@ db.all(sql, [], (err, rows) => {
         </div>
         <div class="row">
           <div class="weather-pressure">
-            1010hPa
+            {{i.cisnienie}}hPa
           </div>
           <div class="weather-pm">
-            0.25
+            {{i.pm}}
           </div>
         </div>
 
 
         <div class="row">
             <div class="timestamp">
-              20s temu
-            </div>
-        </div>
-      </div>
-
-      <div class="block">
-        <div class="row">
-          <div class="weather-logo">
-            🌧️
-          </div>
-          <div class="weather-temp">
-            19°C
-          </div>
-        </div>
-        <div class="row">
-          <div class="summary-title">
-            Deszczowo
-          </div>
-        </div>
-        <div class="row-headline">
-          <div class="weather-pressure-headline">
-            Ćiśnienie
-          </div>
-          <div class="weather-pm-headline">
-            Stężenie PM2.5
-          </div>
-        </div>
-        <div class="row">
-          <div class="weather-pressure">
-            1013hPa
-          </div>
-          <div class="weather-pm">
-            0.25
-          </div>
-        </div>
-
-
-        <div class="row">
-            <div class="timestamp">
-              1d temu
-            </div>
-        </div>
-      </div>
-
-      <div class="block">
-
-        <div class="row">
-          <div class="weather-logo">
-            ⛅
-          </div>
-          <div class="weather-temp">
-            17°C
-          </div>
-        </div>
-        <div class="row">
-          <div class="summary-title">
-            Pochmurno
-          </div>
-        </div>
-        <div class="row-headline">
-          <div class="weather-pressure-headline">
-            Ćiśnienie
-          </div>
-          <div class="weather-pm-headline">
-            Stężenie PM2.5
-          </div>
-        </div>
-        <div class="row">
-          <div class="weather-pressure">
-            1010hPa
-          </div>
-          <div class="weather-pm">
-            0.25
-          </div>
-        </div>
-
-
-        <div class="row">
-            <div class="timestamp">
-              2d temu
+              {{i.timestamp}}
             </div>
         </div>
       </div>
@@ -139,4 +48,19 @@ db.all(sql, [], (err, rows) => {
 
 </template>
 <script>
+  export default {
+    data: function() {
+           return  {
+             pastInfo: []
+           }
+      },
+      mounted () {
+      this.$http.get('http://0.0.0.0:5002/PastData')
+      .then((result) => {
+        this.pastInfo = result.data
+      })
+      },
+  }
+
+
 </script>

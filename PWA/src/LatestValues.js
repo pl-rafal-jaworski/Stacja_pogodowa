@@ -1,11 +1,7 @@
 import Vue from 'vue';
 const axios = require('axios').default;
 
-var temp =  new Vue({
-
-});
-
-var tempAktualna = Vue.component('tempAktualna',{
+Vue.component('tempAktualna',{
   data: function() {
          return  {
            temp: "N/A"
@@ -13,7 +9,7 @@ var tempAktualna = Vue.component('tempAktualna',{
     },
     mounted () {
       axios
-        .get('http://172.20.10.2:5002/NewestTemp')
+        .get('http://192.168.1.106:5002/NewestTemp')
         .then(response => (this.temp = response.data))
     },
   template: '<a>{{temp.temp}}°C</a>',
@@ -27,7 +23,7 @@ Vue.component('cisnienieAktualne',{
     },
     mounted () {
       axios
-        .get('http://172.20.10.2:5002/NewestPressure')
+        .get('http://192.168.1.106:5002/NewestPressure')
         .then(response => (this.cisnienie = response.data))
     },
   template: '<a>{{cisnienie.cisnienie}}hPa</a>',
@@ -41,7 +37,7 @@ Vue.component('pmAktualne',{
     },
     mounted () {
       axios
-        .get('http://172.20.10.2:5002/NewestPM')
+        .get('http://192.168.1.106:5002/NewestPM')
         .then(response => (this.pm = response.data))
     },
   template: '<a>{{pm.pm}}</a>',
@@ -55,7 +51,7 @@ Vue.component('timestampLast',{
     },
     mounted () {
       axios
-        .get('http://172.20.10.2:5002/NewestTimestamp')
+        .get('http://192.168.1.106:5002/NewestTimestamp')
         .then(response => (this.timestamp = response.data))
     },
   template: '<a>{{timestamp.timestamp}}</a>',
@@ -69,7 +65,7 @@ Vue.component('tempDescAktualnie',{
     },
     mounted () {
       axios
-        .get('http://172.20.10.2:5002/NewestTempDesc')
+        .get('http://192.168.1.106:5002/NewestTempDesc')
         .then(response => (this.tempDesc = response.data))
     },
   template: '<a>{{tempDesc.desc}}</a>',
@@ -83,7 +79,7 @@ Vue.component('tempEmojiAktualnie',{
     },
     mounted () {
       axios
-        .get('http://172.20.10.2:5002/NewestTempDesc')
+        .get('http://192.168.1.106:5002/NewestTempDesc')
         .then(response => (this.tempEmoji = response.data))
     },
   template: '<div class="weather-logo">{{tempEmoji.emoji}}</div>',
