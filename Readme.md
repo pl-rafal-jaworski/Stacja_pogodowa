@@ -19,7 +19,9 @@ System stacji pogodowej oparty o czujniki temperatury, wilgotności, ciśnienia 
 
 ## Wykorzystane czujniki oraz komponenty
 - Raspberry Pi
-- ...
+- DHT22
+- PMS5003
+- BMP280
 
 ## Uruchamianie wersji testowej aplikacji/strony
 _Wymaga repozytorium npm_
