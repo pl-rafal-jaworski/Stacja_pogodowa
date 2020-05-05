@@ -1,0 +1,13 @@
+Flask==1.1.2
+Flask-Ext==0.1
+Flask-Jsonpify==1.5.0
+Flask-RESTful==0.3.8
+Flask-SQLAlchemy==2.4.1
+jsonify==0.5
+html5lib==1.0.1
+httplib2==0.11.3
+certifi==2018.8.24
+serial==0.0.97
+simplejson==3.16.0
+SQLAlchemy==1.3.16
+sqlparse==0.3.0

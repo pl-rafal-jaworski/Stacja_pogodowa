@@ -55,7 +55,7 @@
            }
       },
       mounted () {
-      this.$http.get('http://0.0.0.0:5002/PastData')
+      this.$http.get('http://172.20.10.2:5002/PastData')
       .then((result) => {
         this.pastInfo = result.data
       })
