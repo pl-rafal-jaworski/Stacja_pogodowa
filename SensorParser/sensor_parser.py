@@ -308,7 +308,7 @@ def main():
 
             update_db = False
 
-        time.sleep(1)
+        time.sleep(60)
         minute += 1
 
 
